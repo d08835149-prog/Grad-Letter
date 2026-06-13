@@ -134,6 +134,7 @@ body::before{
     border-bottom-right-radius:10px;
 
     animation:rainbowEnvelope 8s linear infinite;
+    transition:transform .6s ease;
 }
 
 /* 덮개 */
@@ -183,7 +184,9 @@ body::before{
 
     transition:
     transform .6s ease,
-    height .6s ease;
+    height .6s ease,
+    width .6s ease,
+    left .6s ease;
 
     box-shadow:
     0 2px 10px rgba(0,0,0,.2);
@@ -208,12 +211,18 @@ body::before{
     transform:rotateX(180deg);
 }
 
+.letter-container.active .envelope{
+    transform:translateY(90px);
+}
+
 .letter-container.active .paper{
     transform:
-    translateY(-120px)
-    scale(1.03);
+    translateY(-210px)
+    scale(1.08);
 
-    height:380px;
+    left:-25px;
+    width:350px;
+    height:min(430px,65vh);
 
     overflow-y:auto;
 
